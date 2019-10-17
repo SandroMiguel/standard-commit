@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.2](https://github.com/SandroMiguel/standard-commit/compare/v1.1.0...v0.0.2) (2019-10-17)
+
+
+### Bug Fixes
+
+* update version to 0.0.1 ([314725e](https://github.com/SandroMiguel/standard-commit/commit/314725ef8c574ae6b0a1fab635f1468317153a6f))
+
 ## 0.0.1 (2019-10-17)
 
 
