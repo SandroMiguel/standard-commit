@@ -1,9 +1,31 @@
 {
+  "name": "package.json-boilerplate",
+  "version": "1.1.0",
+  "description": "The inspirational package.json boilerplate",
+  "license": "MIT",
+  "author": {
+    "name": "Sandro Miguel Marques",
+    "email": "sandromiguel@sandromiguel.com",
+    "url": "http://sandromiguel.com"
+  },
+  "keywords": [
+    "git",
+    "commit",
+    "husky",
+    "commitlint",
+    "commitizen",
+    "standard-version"
+  ],
+  "repository": "git@github.com:SandroMiguel/standard-commit.git",
+  "scripts": {
+    "release": "standard-version"
+  },
   "devDependencies": {
     "@commitlint/cli": "^8.2.0",
     "@commitlint/config-conventional": "^8.2.0",
     "cz-conventional-changelog": "^3.0.2",
-    "husky": "^3.0.9"
+    "husky": "^3.0.9",
+    "standard-version": "^7.0.0"
   },
   "husky": {
     "hooks": {
