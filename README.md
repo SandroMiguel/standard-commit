@@ -1,6 +1,6 @@
 # standard-commit
 
-Standardization of git commit messages
+Standardize commit messages
 
 [![license](https://img.shields.io/badge/License-MIT-blue.svg?style=flat)](LICENSE)
 
