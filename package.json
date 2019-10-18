@@ -10,9 +10,10 @@
   },
   "keywords": [
     "git",
-    "conventional",
+    "conventions",
     "commit",
     "husky",
+    "lint",
     "commitlint",
     "commitizen",
     "standard-version"
