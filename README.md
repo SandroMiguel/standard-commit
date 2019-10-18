@@ -1,5 +1,9 @@
 # standard-commit
 
+Standardization of git commit messages
+
+[![license](https://img.shields.io/badge/License-MIT-blue.svg?style=flat)](LICENSE)
+
 ## Getting Started
 
 ### Installation
@@ -60,3 +64,14 @@ yarn release
 - Lint commit messages - [commitlint](https://github.com/conventional-changelog/commitlint)
 - Commit messages - [commitizen](https://github.com/commitizen/cz-cli)
 - Automate versioning - [standard-version](https://github.com/conventional-changelog/standard-version)
+
+## Contributing
+Want to contribute? All contributions are welcome. Read the [contributing guide](CONTRIBUTING.md).
+
+## Questions
+If you have questions tweet me at [@sandro_m_m](https://twitter.com/sandro_m_m) or [open an issue](../../issues/new).
+
+## License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
+
+**~ sharing is caring ~**
