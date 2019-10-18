@@ -53,3 +53,10 @@ git add .
 git cz
 yarn release
 ```
+
+## Credits
+
+- Git hooks - [Husky](https://github.com/typicode/husky)
+- Lint commit messages - [commitlint](https://github.com/conventional-changelog/commitlint)
+- Commit messages - [commitizen](https://github.com/commitizen/cz-cli)
+- Automate versioning - [standard-version](https://github.com/conventional-changelog/standard-version)
