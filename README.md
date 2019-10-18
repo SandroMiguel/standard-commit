@@ -4,19 +4,22 @@ Standardization of git commit messages
 
 [![license](https://img.shields.io/badge/License-MIT-blue.svg?style=flat)](LICENSE)
 
-## Getting Started
+## Installation
 
-### Installation
+- **husky** will trigger the commitlint on each commit
+- **commitlint** checks if your commit messages meet the [conventional commit format](https://conventionalcommits.org/)
+- **commitizen** helps format commit messages with a series of prompts
+- **standard-version** will update CHANGELOG.md, bump version and generate a new tag
 
-#### Step 1 - Install Husky, commitlint and standard-version locally
+### Step 1 - Install husky, commitlint and standard-version locally
 
 `yarn add --dev husky @commitlint/cli @commitlint/config-conventional standard-version`
 
-#### Step 2 - Install commitizen globally
+### Step 2 - Install commitizen globally
 
 `sudo yarn global add commitizen`
 
-#### Step 3 - Update package.json
+### Step 3 - Update package.json
 
 ```
 {
@@ -38,7 +41,7 @@ Standardization of git commit messages
 }
 ```
 
-#### Step 4 - Create a `commitlint.config.js` file in your project root directory
+### Step 4 - Create a `commitlint.config.js` file in your project root directory
 
 ```
 module.exports = {
@@ -46,21 +49,42 @@ module.exports = {
 };
 ```
 
-#### Step 5 - Configure commitizen
+### Step 5 - Configure commitizen
 
 `commitizen init cz-conventional-changelog --save-dev --save-exact`
 
-#### Step 6 - Commit
+## Usage
+
+### Commit with commitizen
 
 ```
 git add .
 git cz
 yarn release
+git push --follow-tags
+```
+
+### Normal commit command
+
+```
+git add .
+git commit -m "feat(blog): add comment section"
+yarn release
+git push --follow-tags
+```
+
+### Commit but skip changelog and bump version
+
+```
+git add .
+git cz
+yarn release -- --skip.changelog --skip.bump
+git push --follow-tags
 ```
 
 ## Credits
 
-- Git hooks - [Husky](https://github.com/typicode/husky)
+- Git hooks - [husky](https://github.com/typicode/husky)
 - Lint commit messages - [commitlint](https://github.com/conventional-changelog/commitlint)
 - Commit messages - [commitizen](https://github.com/commitizen/cz-cli)
 - Automate versioning - [standard-version](https://github.com/conventional-changelog/standard-version)
