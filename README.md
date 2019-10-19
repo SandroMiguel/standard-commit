@@ -55,6 +55,10 @@ module.exports = {
 
 ## Usage
 
+Basically instead of typing `git commit` now you type `git cz` which will open a wizard that will help you write a standardized message.
+
+![Commitizen template](docs/img/commitizen_01.png)
+
 ### Commit with commitizen
 
 ```
