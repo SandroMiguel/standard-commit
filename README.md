@@ -55,11 +55,13 @@ module.exports = {
 
 ## Usage
 
-Basically instead of typing `git commit` now you type `git cz` which will open a wizard that will help you write a standardized message.
+Basically, instead of typing `git commit` now you type `git cz` which will open a wizard that will help you write a standardized message.
 
 ![Commitizen template](docs/img/commitizen_01.png)
 
 ### Commit with commitizen
+
+Using commitizen to prompts a wizard
 
 ```
 git add .
@@ -69,6 +71,8 @@ git push --follow-tags
 ```
 
 ### Normal commit command
+
+You can still use `git commit ...` but the commit will fail if the commit message is not properly formatted.
 
 ```
 git add .
