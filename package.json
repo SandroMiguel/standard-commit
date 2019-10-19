@@ -1,7 +1,7 @@
 {
   "name": "package.json-boilerplate",
   "version": "0.0.8",
-  "description": "The inspirational package.json boilerplate",
+  "description": "Standardize commit messages",
   "license": "MIT",
   "author": {
     "name": "Sandro Miguel Marques",
@@ -16,7 +16,8 @@
     "lint",
     "commitlint",
     "commitizen",
-    "standard-version"
+    "standard-version",
+    "changelog"
   ],
   "repository": "git@github.com:SandroMiguel/standard-commit.git",
   "scripts": {
