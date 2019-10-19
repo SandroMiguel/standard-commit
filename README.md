@@ -81,12 +81,12 @@ yarn release
 git push --follow-tags
 ```
 
-### Commit but skip changelog and bump version
+### Commit but skip changelog, bump version and tag
 
 ```
 git add .
 git cz
-yarn release --skip.changelog --skip.bump
+yarn release --skip.changelog --skip.bump --skip.tag
 git push --follow-tags
 ```
 
