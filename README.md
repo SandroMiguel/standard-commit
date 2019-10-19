@@ -86,7 +86,7 @@ git push --follow-tags
 ```
 git add .
 git cz
-yarn release -- --skip.changelog --skip.bump
+yarn release --skip.changelog --skip.bump
 git push --follow-tags
 ```
 
