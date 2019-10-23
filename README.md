@@ -8,7 +8,7 @@ Standardize commit messages
 
 - **husky** will trigger the commitlint on each commit
 - **commitlint** checks if your commit messages meet the [conventional commits](https://conventionalcommits.org/) format
-- **commitizen** helps format commit messages with a series of prompts
+- **commitizen** and **cz-conventional-changelog** helps format commit messages with a series of prompts
 - **standard-version** will update CHANGELOG.md, bump the version and generate a new tag
 
 ### Step 1 - Install husky, commitlint, cz-conventional-changelog and standard-version locally
