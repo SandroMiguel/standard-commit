@@ -7,13 +7,13 @@ Standardize commit messages
 ## Installation
 
 - **husky** will trigger the commitlint on each commit
-- **commitlint** checks if your commit messages meet the [conventional commit format](https://conventionalcommits.org/)
+- **commitlint** checks if your commit messages meet the [conventional commits](https://conventionalcommits.org/) format
 - **commitizen** helps format commit messages with a series of prompts
-- **standard-version** will update CHANGELOG.md, bump version and generate a new tag
+- **standard-version** will update CHANGELOG.md, bump the version and generate a new tag
 
-### Step 1 - Install husky, commitlint and standard-version locally
+### Step 1 - Install husky, commitlint, cz-conventional-changelog and standard-version locally
 
-`yarn add --dev husky @commitlint/cli @commitlint/config-conventional standard-version`
+`yarn add --dev husky @commitlint/cli @commitlint/config-conventional cz-conventional-changelog standard-version`
 
 ### Step 2 - Install commitizen globally
 
@@ -61,7 +61,7 @@ Basically, instead of typing `git commit` now you type `git cz` which will open 
 
 ### Commit with commitizen
 
-Using commitizen to prompts a wizard
+Using commitizen to prompts a wizard.
 
 ```
 git add .
@@ -87,7 +87,7 @@ git push --follow-tags
 git add .
 git cz
 yarn release --skip.changelog --skip.bump --skip.tag
-git push --follow-tags
+git push
 ```
 
 ## Credits
@@ -98,12 +98,15 @@ git push --follow-tags
 - Automate versioning - [standard-version](https://github.com/conventional-changelog/standard-version)
 
 ## Contributing
+
 Want to contribute? All contributions are welcome. Read the [contributing guide](CONTRIBUTING.md).
 
 ## Questions
+
 If you have questions tweet me at [@sandro_m_m](https://twitter.com/sandro_m_m) or [open an issue](../../issues/new).
 
 ## License
+
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
 
 **~ sharing is caring ~**
