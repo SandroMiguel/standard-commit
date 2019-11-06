@@ -70,6 +70,12 @@ yarn release
 git push --follow-tags
 ```
 
+#### Pro tip
+
+Run this command in your first release to prevent bumping the version in package.json
+
+`yarn release -- --first-release`
+
 ### Normal commit command
 
 You can still use `git commit ...` but the commit will fail if the commit message is not properly formatted.
