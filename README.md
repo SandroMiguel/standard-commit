@@ -55,7 +55,7 @@ module.exports = {
 
 ## Usage
 
-Basically, instead of typing `git commit` now you type `git cz` which will open a wizard that will help you write a standardized message.
+Basically, instead of typing `git commit` now you type `git cz` which will open a wizard and help you write a standardized message.
 
 ![Commitizen template](docs/img/commitizen_01.png)
 
@@ -72,7 +72,7 @@ git push --follow-tags
 
 #### Pro tip
 
-Run this command in your first release to prevent bumping the version in package.json
+Run this command in your first release to prevent bumping the version in `package.json`
 
 `yarn release -- --first-release`
 
