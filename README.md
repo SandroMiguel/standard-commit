@@ -38,6 +38,8 @@ Standardize commit messages
       "path": "./node_modules/cz-conventional-changelog"
     }
   }
+
+  ...
 }
 ```
 
@@ -45,8 +47,8 @@ Standardize commit messages
 
 ```
 module.exports = {
-  extends: ['@commitlint/config-conventional']
-};
+  extends: ['@commitlint/config-conventional'],
+}
 ```
 
 ### Step 5 - Configure commitizen
