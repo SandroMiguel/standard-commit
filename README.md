@@ -78,6 +78,24 @@ Run this command in your first release to prevent bumping the version in `packag
 
 `yarn release -- --first-release`
 
+Prevent bumping the version:
+
+```
+git add .
+git cz
+yarn release -- --first-release
+git push --follow-tags
+```
+
+You can also release a specific version:
+
+```
+git add .
+git cz
+yarn release --release-as 1.1.0
+git push --follow-tags
+```
+
 ### Normal commit command
 
 You can still use `git commit ...` but the commit will fail if the commit message is not properly formatted.
