@@ -1,13 +1,13 @@
 # standard-commit
 
-Standardize commit messages
+Guidelines to standardize commit messages
 
 [![license](https://img.shields.io/badge/License-MIT-blue.svg?style=flat)](LICENSE)
 
 ## Installation
 
+- **commitlint** checks if your commit messages meet the [Conventional Commits](https://conventionalcommits.org/) specification
 - **husky** will trigger the commitlint on each commit
-- **commitlint** checks if your commit messages meet the [conventional commits](https://conventionalcommits.org/) format
 - **commitizen** and **cz-conventional-changelog** helps format commit messages with a series of prompts
 - **standard-version** will update CHANGELOG.md, bump the version and generate a new tag
 

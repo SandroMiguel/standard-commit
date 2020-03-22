@@ -1,5 +1,5 @@
 {
-  "name": "package.json-boilerplate",
+  "name": "standard-commit",
   "version": "0.0.17",
   "description": "Standardize commit messages",
   "license": "MIT",
