@@ -13,11 +13,15 @@ Guidelines to standardize commit messages
 
 ### Step 1 - Install husky, commitlint, cz-conventional-changelog and standard-version locally
 
-`yarn add --dev husky @commitlint/cli @commitlint/config-conventional cz-conventional-changelog standard-version`
+```sh
+yarn add --dev husky @commitlint/cli @commitlint/config-conventional cz-conventional-changelog standard-version
+```
 
 ### Step 2 - Install commitizen globally
 
-`sudo yarn global add commitizen`
+```sh
+sudo yarn global add commitizen
+```
 
 ### Step 3 - Update package.json
 
@@ -65,7 +69,7 @@ Basically, instead of typing `git commit` now you type `git cz` which will open 
 
 Using commitizen to prompts a wizard.
 
-```
+```sh
 git add .
 git cz
 yarn release
@@ -80,7 +84,7 @@ Run this command in your first release to prevent bumping the version in `packag
 
 Prevent bumping the version:
 
-```
+```sh
 git add .
 git cz
 yarn release -- --first-release
@@ -89,7 +93,7 @@ git push --follow-tags
 
 You can also release a specific version:
 
-```
+```sh
 git add .
 git cz
 yarn release --release-as 1.1.0
@@ -100,7 +104,7 @@ git push --follow-tags
 
 You can still use `git commit ...` but the commit will fail if the commit message is not properly formatted.
 
-```
+```sh
 git add .
 git commit -m "feat(blog): add comment section"
 yarn release
@@ -109,7 +113,7 @@ git push --follow-tags
 
 ### Commit but skip changelog, bump version and tag
 
-```
+```sh
 git add .
 git cz
 yarn release --skip.changelog --skip.bump --skip.tag
