@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.18](https://github.com/SandroMiguel/standard-commit/compare/v0.0.17...v0.0.18) (2020-12-12)
+
 ### [0.0.17](https://github.com/SandroMiguel/standard-commit/compare/v0.0.16...v0.0.17) (2020-03-19)
 
 ### [0.0.16](https://github.com/SandroMiguel/standard-commit/compare/v0.0.15...v0.0.16) (2020-03-17)
