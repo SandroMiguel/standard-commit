@@ -11,7 +11,7 @@ Guidelines to standardize commit messages
 - **commitizen** and **cz-conventional-changelog** helps format commit messages with a series of prompts
 - **standard-version** will update CHANGELOG.md, bump the version and generate a new tag
 
-### Step 1 - Install husky, commitlint, cz-conventional-changelog and standard-version locally
+### Step 1 - Install husky, commitlint, cz-conventional-changelog, and standard-version locally
 
 ```sh
 yarn add --dev husky @commitlint/cli @commitlint/config-conventional cz-conventional-changelog standard-version
@@ -39,7 +39,8 @@ sudo yarn global add commitizen
   },
   "config": {
     "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
+        "path": "./node_modules/cz-conventional-changelog",
+        "disableScopeLowerCase": true
     }
   }
 
@@ -52,6 +53,9 @@ sudo yarn global add commitizen
 ```
 module.exports = {
   extends: ['@commitlint/config-conventional'],
+  rules: {
+    'scope-case': [0],
+  },
 }
 ```
 
@@ -111,7 +115,7 @@ yarn release
 git push --follow-tags
 ```
 
-### Commit but skip changelog, bump version and tag
+### Commit but skip changelog, bump version, and tag
 
 ```sh
 git add .
