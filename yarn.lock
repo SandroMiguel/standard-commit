@@ -2398,17 +2398,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lodash@npm:4.17.15, lodash@npm:^4.17.12, lodash@npm:^4.17.15":
+"lodash@npm:4.17.15":
   version: 4.17.15
   resolution: "lodash@npm:4.17.15"
   checksum: bb689bc88c0645b7002a045cdbe32292ae51d5d2a6f6a5272cb5a5ace9b06700bb3d30c6be6ecfae9a70f9c943f60e90765033fc7ff706cf9219374eeda314ad
   languageName: node
   linkType: hard
 
-"lodash@npm:^4.17.19":
-  version: 4.17.20
-  resolution: "lodash@npm:4.17.20"
-  checksum: b31afa09739b7292a88ec49ffdb2fcaeb41f690def010f7a067eeedffece32da6b6847bfe4d38a77e6f41778b9b2bca75eeab91209936518173271f0b69376ea
+"lodash@npm:^4.17.12, lodash@npm:^4.17.15, lodash@npm:^4.17.19":
+  version: 4.17.21
+  resolution: "lodash@npm:4.17.21"
+  checksum: eb835a2e51d381e561e508ce932ea50a8e5a68f4ebdd771ea240d3048244a8d13658acbd502cd4829768c56f2e16bdd4340b9ea141297d472517b83868e677f7
   languageName: node
   linkType: hard
 
@@ -3360,7 +3360,7 @@ __metadata:
 
 "resolve@patch:resolve@^1.1.6#~builtin<compat/resolve>, resolve@patch:resolve@^1.10.0#~builtin<compat/resolve>":
   version: 1.15.1
-  resolution: "resolve@patch:resolve@npm%3A1.15.1#~builtin<compat/resolve>::version=1.15.1&hash=c3c19d"
+  resolution: "resolve@patch:resolve@npm%3A1.15.1#~builtin<compat/resolve>::version=1.15.1&hash=07638b"
   dependencies:
     path-parse: ^1.0.6
   checksum: db40f1203ef19e18edc66801c7a5903b903f20c318c1d7d234dd5b792361bf336b556d27e7f1831871d15471d3d7ed7baad979a781fb57463a36ea1abd293608
@@ -3369,7 +3369,7 @@ __metadata:
 
 "resolve@patch:resolve@^1.17.0#~builtin<compat/resolve>":
   version: 1.19.0
-  resolution: "resolve@patch:resolve@npm%3A1.19.0#~builtin<compat/resolve>::version=1.19.0&hash=c3c19d"
+  resolution: "resolve@patch:resolve@npm%3A1.19.0#~builtin<compat/resolve>::version=1.19.0&hash=07638b"
   dependencies:
     is-core-module: ^2.1.0
     path-parse: ^1.0.6
