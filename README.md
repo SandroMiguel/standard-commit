@@ -9,12 +9,12 @@ Guidelines to standardize commit messages
 - **commitlint** checks if your commit messages meet the [Conventional Commits](https://conventionalcommits.org/) specification
 - **husky** will trigger the commitlint on each commit
 - **commitizen** and **cz-conventional-changelog** helps format commit messages with a series of prompts
-- **standard-version** will update CHANGELOG.md, bump the version and generate a new tag
+- **release-please** automates CHANGELOG.md, bump the version and generate a new release
 
-### Step 1 - Install husky, commitlint, cz-conventional-changelog, and standard-version locally
+### Step 1 - Install husky, commitlint, and cz-conventional-changelog locally
 
 ```sh
-yarn add --dev husky @commitlint/cli @commitlint/config-conventional cz-conventional-changelog standard-version
+yarn add --dev husky @commitlint/cli @commitlint/config-conventional cz-conventional-changelog
 ```
 
 ### Step 2 - Install commitizen globally
@@ -29,20 +29,12 @@ sudo yarn global add commitizen
 {
   ...
 
-  "scripts": {
-    "release": "standard-version"
-  },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-     }
-  },
   "config": {
     "commitizen": {
         "path": "./node_modules/cz-conventional-changelog",
         "disableScopeLowerCase": true
     }
-  }
+  },
 
   ...
 }
@@ -63,6 +55,28 @@ module.exports = {
 
 `commitizen init cz-conventional-changelog --save-dev --save-exact`
 
+### Step 6 - Setup Release Please
+
+#### Deploy release-please with GitHub Action
+
+Create a `.github/workflows/release-please.yml` file with these contents:
+
+```
+on:
+    push:
+        branches:
+            - main
+name: release-please
+jobs:
+    release-please:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: google-github-actions/release-please-action@v3
+              with:
+                  release-type: node
+                  package-name: release-please-action
+```
+
 ## Usage
 
 Basically, instead of typing `git commit` now you type `git cz` which will open a wizard and help you write a standardized message.
@@ -76,31 +90,6 @@ Using commitizen to prompts a wizard.
 ```sh
 git add .
 git cz
-yarn release
-git push --follow-tags
-```
-
-#### Pro tip
-
-Run this command in your first release to prevent bumping the version in `package.json`
-
-`yarn release -- --first-release`
-
-Prevent bumping the version:
-
-```sh
-git add .
-git cz
-yarn release -- --first-release
-git push --follow-tags
-```
-
-You can also release a specific version:
-
-```sh
-git add .
-git cz
-yarn release --release-as 1.1.0
 git push --follow-tags
 ```
 
@@ -111,17 +100,7 @@ You can still use `git commit ...` but the commit will fail if the commit messag
 ```sh
 git add .
 git commit -m "feat(blog): add comment section"
-yarn release
 git push --follow-tags
-```
-
-### Commit but skip changelog, bump version, and tag
-
-```sh
-git add .
-git cz
-yarn release --skip.changelog --skip.bump --skip.tag
-git push
 ```
 
 ## Credits
@@ -129,7 +108,7 @@ git push
 - Git hooks - [husky](https://github.com/typicode/husky)
 - Lint commit messages - [commitlint](https://github.com/conventional-changelog/commitlint)
 - Commit messages - [commitizen](https://github.com/commitizen/cz-cli)
-- Automate versioning - [standard-version](https://github.com/conventional-changelog/standard-version)
+- Generate release PRs - [release-please](https://github.com/googleapis/release-please)
 
 ## Contributing
 
