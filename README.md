@@ -51,11 +51,26 @@ module.exports = {
 }
 ```
 
-### Step 5 - Configure commitizen
+### Step 5 - Setup husky
+
+#### Edit `package.json > prepare` script and run it once:
+
+```
+npm pkg set scripts.prepare="husky install"
+yarn prepare
+```
+
+#### Add a hook to run commitlint
+
+```
+npx husky add .husky/commit-msg "yarn commitlint --edit"
+```
+
+### Step 6 - Configure commitizen
 
 `commitizen init cz-conventional-changelog --save-dev --save-exact`
 
-### Step 6 - Setup Release Please
+### Step 7 - Setup Release Please
 
 #### Deploy release-please with GitHub Action
 
