@@ -92,6 +92,10 @@ jobs:
                   package-name: release-please-action
 ```
 
+Make sure you have the correct _Workflow permissions_ on your repository (Settings > Actions > General):
+
+![Workflow permissions](docs/img/workflow-permissions-01.png)
+
 ## Usage
 
 Basically, instead of typing `git commit` now you type `git cz` which will open a wizard and help you write a standardized message.
