@@ -1,17 +1,21 @@
-# standard-commit
+# Standard Commit
 
 Guidelines to standardize commit messages
 
 [![license](https://img.shields.io/badge/License-MIT-blue.svg?style=flat)](LICENSE)
 
+## Features
+
+- Validates commit messages against the [Conventional Commits](https://conventionalcommits.org/) specification.
+- Formats commit messages using a series of prompts.
+- Automates the generation of a CHANGELOG.md file.
+- Bumps the version and generates a new release.
+
 ## Installation
 
-- **commitlint** checks if your commit messages meet the [Conventional Commits](https://conventionalcommits.org/) specification
-- **husky** will trigger the commitlint on each commit
-- **commitizen** and **cz-conventional-changelog** helps format commit messages with a series of prompts
-- **release-please** automates CHANGELOG.md, bump the version and generate a new release
+### Step 1 - Install Dependencies
 
-### Step 1 - Install husky, commitlint, and cz-conventional-changelog locally
+Install the necessary dependencies locally:
 
 ```sh
 yarn add --dev husky @commitlint/cli @commitlint/config-conventional cz-conventional-changelog
@@ -19,11 +23,15 @@ yarn add --dev husky @commitlint/cli @commitlint/config-conventional cz-conventi
 
 ### Step 2 - Install commitizen globally
 
+Install commitizen globally to enable standardized commit message formatting:
+
 ```sh
 sudo yarn global add commitizen
 ```
 
-### Step 3 - Update package.json
+### Step 3 - Update `package.json`
+
+Update your project's `package.json` file to configure commitizen:
 
 ```
 {
@@ -40,41 +48,47 @@ sudo yarn global add commitizen
 }
 ```
 
-### Step 4 - Create a `commitlint.config.js` file in your project root directory
+### Step 4 - Configure Commitlint
 
-```
+Create a `commitlint.config.js` file in your project root directory to configure commitlint:
+
+```js
 module.exports = {
-  extends: ['@commitlint/config-conventional'],
+  extends: ["@commitlint/config-conventional"],
   rules: {
-    'scope-case': [0],
+    "scope-case": [0],
   },
-}
+};
 ```
 
 ### Step 5 - Setup husky
 
-#### Edit `package.json > prepare` script and run it once:
+Edit `package.json > prepare` script and run it once:
 
-```
+```sh
 npm pkg set scripts.prepare="husky install"
 yarn prepare
 ```
 
-#### Add a hook to run commitlint
+Add a hook to run commitlint
 
-```
+```sh
 npx husky add .husky/commit-msg "yarn commitlint --edit"
 ```
 
 ### Step 6 - Configure commitizen
 
-`commitizen init cz-conventional-changelog --save-dev --save-exact`
+Configure commitizen to use the conventional changelog adapter:
+
+```sh
+commitizen init cz-conventional-changelog --save-dev --save-exact
+```
 
 ### Step 7 - Setup Release Please
 
-#### Deploy release-please with GitHub Action
+Automate release management with Release Please:
 
-Create a `.github/workflows/release-please.yml` file with these contents:
+#### Deploy release-please with GitHub Action by creating a `.github/workflows/release-please.yml` file with these contents:
 
 ```
 on:
@@ -92,19 +106,19 @@ jobs:
                   package-name: release-please-action
 ```
 
-Make sure you have the correct _Workflow permissions_ on your repository (Settings > Actions > General):
+#### Make sure you have the correct _Workflow permissions_ on your repository (Settings > Actions > General):
 
 ![Workflow permissions](docs/img/workflow-permissions-01.png)
 
 ## Usage
 
-Basically, instead of typing `git commit` now you type `git cz` which will open a wizard and help you write a standardized message.
+Standard Commit simplifies the process of writing standardized commit messages:
 
 ![Commitizen template](docs/img/commitizen_01.png)
 
-### Commit with commitizen
+### Using Commitizen
 
-Using commitizen to prompts a wizard.
+Instead of `git commit`, use `git cz` to open a wizard and generate a standardized commit message:
 
 ```sh
 git add .
@@ -124,10 +138,10 @@ git push --follow-tags
 
 ## Credits
 
-- Git hooks - [husky](https://github.com/typicode/husky)
-- Lint commit messages - [commitlint](https://github.com/conventional-changelog/commitlint)
-- Commit messages - [commitizen](https://github.com/commitizen/cz-cli)
-- Generate release PRs - [release-please](https://github.com/googleapis/release-please)
+- [commitizen](https://github.com/commitizen/cz-cli) helps format commit messages with a series of prompts
+- [husky](https://github.com/typicode/husky) will trigger the commitlint on each commit
+- [commitlint](https://github.com/conventional-changelog/commitlint) checks if your commit messages meet the [Conventional Commits](https://conventionalcommits.org/) specification
+- [release-please](https://github.com/googleapis/release-please) automates `CHANGELOG.md`, bump the version and generate a new release
 
 ## Contributing
 
