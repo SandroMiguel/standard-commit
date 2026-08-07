@@ -1,19 +1,33 @@
 # Standard Commit
 
-Guidelines to standardize commit messages
+A practical guide for setting up a Conventional Commits workflow with Husky, Commitlint and Commitizen.
 
 [![license](https://img.shields.io/badge/License-MIT-blue.svg?style=flat)](LICENSE)
 
+## Why?
+
+Instead of configuring Husky, Commitlint, Commitizen and Release Please individually, this guide shows how to combine them into a complete Conventional Commits workflow.
+
+## Example
+
+```text
+feat(auth): add OAuth login
+
+fix(api): prevent duplicate requests
+
+docs(readme): improve installation guide
+```
+
 ## Features
 
-- Validates commit messages against the [Conventional Commits](https://conventionalcommits.org/) specification.
-- Formats commit messages using a series of prompts.
-- Automates the generation of a CHANGELOG.md file.
-- Bumps the version and generates a new release.
+- Validate commit messages against the [Conventional Commits](https://conventionalcommits.org/) specification.
+- Create commit messages interactively with Commitizen.
+- Automate releases and `CHANGELOG.md` generation.
+- Keep version numbers in sync with your release history.
 
 ## Installation
 
-### Step 1 - Install Dependencies
+### 1. Install Dependencies
 
 Install the necessary dependencies locally:
 
@@ -21,19 +35,19 @@ Install the necessary dependencies locally:
 yarn add --dev husky @commitlint/cli @commitlint/config-conventional cz-conventional-changelog
 ```
 
-### Step 2 - Install commitizen globally
+### 2. Install Commitizen globally
 
-Install commitizen globally to enable standardized commit message formatting:
+Install Commitizen globally to enable standardized commit message formatting:
 
 ```sh
 sudo yarn global add commitizen
 ```
 
-### Step 3 - Update `package.json`
+### 3. Update `package.json`
 
-Update your project's `package.json` file to configure commitizen:
+Update your project's `package.json` file to configure Commitizen:
 
-```
+```json
 {
   ...
 
@@ -48,9 +62,9 @@ Update your project's `package.json` file to configure commitizen:
 }
 ```
 
-### Step 4 - Configure Commitlint
+### 4. Configure Commitlint
 
-Create a `commitlint.config.js` file in your project root directory to configure commitlint:
+Create a `commitlint.config.js` file in your project root directory to configure Commitlint:
 
 ```js
 module.exports = {
@@ -61,7 +75,7 @@ module.exports = {
 };
 ```
 
-### Step 5 - Setup husky
+### 5. Set up Husky
 
 Edit `package.json > prepare` script and run it once:
 
@@ -76,34 +90,34 @@ Add a hook to run commitlint
 npx husky add .husky/commit-msg "yarn commitlint --edit"
 ```
 
-### Step 6 - Configure commitizen
+### 6. Configure Commitizen
 
-Configure commitizen to use the conventional changelog adapter:
+Configure Commitizen to use the conventional changelog adapter:
 
 ```sh
 commitizen init cz-conventional-changelog --save-dev --save-exact
 ```
 
-### Step 7 - Setup Release Please
+### 7. Set up Release Please
 
 Automate release management with Release Please:
 
 #### Deploy release-please with GitHub Action by creating a `.github/workflows/release-please.yml` file with these contents:
 
-```
+```yaml
 on:
-    push:
-        branches:
-            - main
+  push:
+    branches:
+      - main
 name: release-please
 jobs:
-    release-please:
-        runs-on: ubuntu-latest
-        steps:
-            - uses: google-github-actions/release-please-action@v3
-              with:
-                  release-type: node
-                  package-name: release-please-action
+  release-please:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: google-github-actions/release-please-action@v3
+        with:
+          release-type: node
+          package-name: release-please-action
 ```
 
 #### Make sure you have the correct _Workflow permissions_ on your repository (Settings > Actions > General):
@@ -136,7 +150,7 @@ git commit -m "feat(blog): add comment section"
 git push --follow-tags
 ```
 
-## Credits
+## Built with
 
 - [commitizen](https://github.com/commitizen/cz-cli) helps format commit messages with a series of prompts
 - [husky](https://github.com/typicode/husky) will trigger the commitlint on each commit
@@ -149,10 +163,8 @@ Want to contribute? All contributions are welcome. Read the [contributing guide]
 
 ## Questions
 
-If you have questions tweet me at [@sandro_m_m](https://twitter.com/sandro_m_m) or [open an issue](../../issues/new).
+Questions, suggestions and bug reports are welcome. Feel free to [open an issue](../../issues/new).
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
-
-**~ sharing is caring ~**
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details
