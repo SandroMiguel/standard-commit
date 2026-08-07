@@ -77,28 +77,11 @@ module.exports = {
 
 ### 5. Set up Husky
 
-Edit `package.json > prepare` script and run it once:
-
 ```sh
-npm pkg set scripts.prepare="husky install"
-yarn prepare
+npx husky init
 ```
 
-Add a hook to run commitlint
-
-```sh
-npx husky add .husky/commit-msg "yarn commitlint --edit"
-```
-
-### 6. Configure Commitizen
-
-Configure Commitizen to use the conventional changelog adapter:
-
-```sh
-commitizen init cz-conventional-changelog --save-dev --save-exact
-```
-
-### 7. Set up Release Please
+### 6. Set up Release Please
 
 Automate release management with Release Please:
 
